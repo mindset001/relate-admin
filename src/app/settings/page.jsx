@@ -5,7 +5,7 @@ const SettingsPage = () => {
   return (
     <div className="flex">
 
-      <main className="flex-1 p-6">
+      <main className="flex-1">
         <Settings />
       </main>
     </div>

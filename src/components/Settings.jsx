@@ -1,8 +1,13 @@
 import React from 'react'
+import Layout from './Layout'
 
 function Settings() {
   return (
-    <div>Settings</div>
+    <div>
+        <Layout>
+            <p>Settings</p>
+        </Layout>
+    </div>
   )
 }
 

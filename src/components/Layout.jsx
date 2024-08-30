@@ -1,29 +1,58 @@
+'use client';
 import Image from 'next/image';
 import React from 'react';
-import Man from '../../public/images/man2.png'
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import Man from '../../public/images/man2.png';
 
 const Layout = ({ children }) => {
+  const pathname = usePathname(); // Get the current path
+
+  const isActive = (path) => {
+    return pathname === path ? 'bg-white text-[#D024C2] rounded-lg' : 'text-white';
+  };
+
   return (
     <div className="flex min-h-screen">
       {/* Sidebar */}
-      <aside className="w-64 bg-teal-800 text-white p-5">
-        <h2 className="text-2xl font-bold mb-8">Reflection</h2>
+      <aside className="w-64 bg-[#D024C2] text-white p-5">
+        <h2 className="text-2xl mb-8 uppercase font-[900] italic">Relate</h2>
         <nav>
           <ul>
-            <li className="mb-4">
-              <a href="/dashboard" className="text-lg font-semibold">Dashboard</a>
+            <li className={`mb-4 rounded-lg ${isActive('/dashboard')}`}>
+              <Link href="/dashboard">
+                <p className={`text-lg font-semibold block p-2 cursor-pointer ${isActive('/dashboard')}`}>
+                  Dashboard
+                </p>
+              </Link>
             </li>
-            <li className="mb-4">
-              <a href="/user" className="text-lg font-semibold">User</a>
+            <li className={`mb-4 rounded-lg ${isActive('/user')}`}>
+              <Link href="/user">
+                <p className={`text-lg font-semibold block p-2 cursor-pointer ${isActive('/user')}`}>
+                  User
+                </p>
+              </Link>
             </li>
-            <li className="mb-4">
-              <a href="/transaction" className="text-lg font-semibold">Transactions</a>
+            <li className={`mb-4 rounded-lg ${isActive('/transaction')}`}>
+              <Link href="/transaction">
+                <p className={`text-lg font-semibold block p-2 cursor-pointer ${isActive('/transaction')}`}>
+                  Transactions
+                </p>
+              </Link>
             </li>
-            <li className="mb-4">
-              <a href="/settings" className="text-lg font-semibold">Settings</a>
+            <li className={`mb-4 rounded-lg ${isActive('/settings')}`}>
+              <Link href="/settings">
+                <p className={`text-lg font-semibold block p-2 cursor-pointer ${isActive('/settings')}`}>
+                  Settings
+                </p>
+              </Link>
             </li>
-            <li>
-              <a href="#" className="text-lg font-semibold">Logout</a>
+            <li className="rounded-lg">
+              <Link href="/">
+                <p className="text-lg font-semibold block p-2 cursor-pointer">
+                  Logout
+                </p>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -42,8 +71,7 @@ const Layout = ({ children }) => {
           </div>
           <div className="flex items-center space-x-4">
             <span className="text-gray-600">Hello, Austine</span>
-          
-            <Image src={Man} alt=''   className="w-10 h-10 rounded-full object-cover" />
+            <Image src={Man} alt="Profile picture" className="w-10 h-10 rounded-full object-cover" />
           </div>
         </header>
 

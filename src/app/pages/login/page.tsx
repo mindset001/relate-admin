@@ -5,7 +5,8 @@ import * as Yup from 'yup';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Input, Modal } from 'antd';
-
+import Image from 'next/image';
+import Robot from '../../../../public/images/robot.jpg'
 const initialValues = {
   email: '',
   password: '',
@@ -36,7 +37,9 @@ function Login () {
   return (
     <main className='login flex justify-center items-center '>
         <div className='w-[70%] h-[80%] flex items-center rounded-lg'>
-          <div className='w-[50%] bg-[#fff] h-[100%]'>hi</div>
+          <div className='w-[50%]  h-[100%]'>
+            <Image src={Robot} alt='' className='h-full'/>
+          </div>
           <div className="w-[50%] flex flex-col items-center justify-center ">
       <div className="w-full max-w-md p-8 space-y-4 bg-white shadow-lg ">
         <h2 className="text-2xl font-semibold">Welcome Back!</h2>
@@ -93,7 +96,7 @@ function Login () {
 
             <div className="text-sm">
            
-                <p className="font-medium text-[#EFC4E8] hover:text-indigo-500 cursor-pointer"  onClick={() => setIsModalVisible(true)}>
+                <p className="font-medium text-[#D024C2] hover:text-indigo-500 cursor-pointer"  onClick={() => setIsModalVisible(true)}>
                   Forgot your password?
                 </p>
            
@@ -103,9 +106,9 @@ function Login () {
           <div>
             <button
               type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#EFC4E8] hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#D024C2] hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              Sign In
+              <Link href='/dashboard'>Sign In</Link>
             </button>
           </div>
         </form>
@@ -118,7 +121,7 @@ function Login () {
          {/* Forgot Password Modal */}
       <Modal
         title="Forgot Password"
-        visible={isModalVisible}
+        open={isModalVisible}
         // onOk={handleForgotPassword}
         onCancel={() => setIsModalVisible(false)}
         okText="Send Reset Link"
