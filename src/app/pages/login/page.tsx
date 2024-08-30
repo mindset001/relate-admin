@@ -36,11 +36,11 @@ function Login () {
 
   return (
     <main className='login flex justify-center items-center '>
-        <div className='w-[70%] h-[80%] flex items-center rounded-lg'>
-          <div className='w-[50%]  h-[100%]'>
+        <div className='w-[90%] md:w-[70%] md:h-[80%] flex items-center rounded-lg'>
+          <div className='hidden md:block w-[50%]  h-[100%]'>
             <Image src={Robot} alt='' className='h-full'/>
           </div>
-          <div className="w-[50%] flex flex-col items-center justify-center ">
+          <div className="w-full md:w-[50%] flex flex-col items-center justify-center ">
       <div className="w-full max-w-md p-8 space-y-4 bg-white shadow-lg ">
         <h2 className="text-2xl font-semibold">Welcome Back!</h2>
         <p className="text-gray-600">Sign in to continue to Hubbly.</p>
@@ -81,20 +81,20 @@ function Login () {
             />
           </div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
+          <div className="w-full flex items-center justify-between">
+            <div className="w-full flex items-center">
               <input
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
                 className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
               />
-              <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
+              <label htmlFor="remember-me" className="ml-2 block text-[12px] md:text-sm text-gray-900">
                 Remember me
               </label>
             </div>
 
-            <div className="text-sm">
+            <div className="w-full text-[12px] md:text-sm">
            
                 <p className="font-medium text-[#D024C2] hover:text-indigo-500 cursor-pointer"  onClick={() => setIsModalVisible(true)}>
                   Forgot your password?

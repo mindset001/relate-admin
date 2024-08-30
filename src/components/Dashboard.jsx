@@ -23,7 +23,7 @@ export default function Home() {
         <PieChart />
       </div>
 
-      <div className="mb-6">
+      <div className="hidden md:block mb-6">
         <RecentJobs />
       </div>
       </main>

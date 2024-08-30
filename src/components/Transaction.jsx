@@ -16,7 +16,9 @@ const TransactionsPage = () => {
   return (
     <Layout>
       <h1 className="text-2xl font-bold mb-6">Transactions</h1>
+      <div className='overflow-x-scroll'>
       <TransactionTable transactions={transactionsData} />
+      </div>
     </Layout>
   );
 };
