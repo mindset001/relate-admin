@@ -1,5 +1,5 @@
 // pages/settings.js
-import Settings from '../components/Settings';
+import Settings from '../../components/Settings';
 
 const SettingsPage = () => {
   return (
