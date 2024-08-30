@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { FiMenu } from 'react-icons/fi';
 import Man from '../../public/images/man2.png';
+import Logo from '../../public/images/Vector.png'
 
 const Layout = ({ children }) => {
   const pathname = usePathname(); // Get the current path
@@ -22,7 +23,9 @@ const Layout = ({ children }) => {
     <div className="flex min-h-screen">
       {/* Sidebar for large screens */}
       <aside className="hidden lg:block w-64 bg-[black] text-white p-5">
-        <h2 className="text-2xl mb-8 uppercase font-[900] italic">Relate</h2>
+        <div className='mb-10'>
+          <Image src={Logo} alt='' className='w-[50px] h-[50px]'/>
+        </div>
         <nav>
           <ul>
             <li className={`mb-4 rounded-lg ${isActive('/dashboard')}`}>
